@@ -1,0 +1,23 @@
+<?php
+cLass Loginmodel extends CI_Model
+{
+	
+	public function login_valid($username,$password)
+	{
+
+		$q=$this->db->query("select * from users where username=$username and password=$password");
+		if(($q->num_rows())==1)
+		{
+			return TRUE;
+		}
+		else 
+		{
+			return FALSE;
+		}
+	
+	}
+}
+
+
+
+?>
